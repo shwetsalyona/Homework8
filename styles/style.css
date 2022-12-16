@@ -3,35 +3,28 @@
     padding: 0;
     margin: 0;
 }
-
 body {
     font-family: 'Roboto', sans-serif;
 }
-
 h1, p, .wish {
     color: #FF8984;
 }
-
 h1 {
     font-size: 1.5rem;
 }
-
 .header {
     padding-top: 20px;
     padding-bottom: 12px;
 }
-
 .header, .wish {
     background-color: #4A4F56;
     text-align: center;
 }
-
 .main {
     background-color: #3B3F45;
     padding-bottom: 45px;
     padding-top: 20px;
 }
-
 ul {
     color: #FFFFFF;
     font-size: 1.125rem;
@@ -40,7 +33,6 @@ ul {
     background-color: aqua;
     list-style-type: none;
 }
-
 li {
     padding: 12px;
 }
@@ -54,44 +46,74 @@ li:nth-child(odd) {
     border-top: solid 2px #88839E;
     border-bottom: solid 2px #88839E;
 }
-
 li:hover {
     background-color: #625E77;
     border-bottom: solid 2px #FFFFFF;
     border-top: solid 2px #FFFFFF;
 }
-
+li:active {
+    background-color: #FF8984;
+}
+input:checked + label {
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.42);
+}
 .li1::after {
     content: ' (for the next lessons about CSS)';
     font-size: 0.688rem;
+    display: inline-flex;
 }
-
 .li2::after {
     content: '  (for more CSS manipulations)';
     font-size: 0.688rem;
+    display: inline-flex;
 }
-
 .li3::after {
     content: '  (because they are awesome)';
     font-size: 0.688rem;
+    display: inline-flex;
 }
-
 .li4::after {
     content: '  (hm... they always dissapear)';
     font-size: 0.688rem;
+    display: inline-flex;
 }
 .li6::after {
     content: '  (for my friends)';
     font-size: 0.688rem;
+    display: inline-flex;
 }
-
 label {
     margin-left: 15px;
 }
-
 .wish {
     width: 50%;
     margin: 45px auto 0 auto;
     padding: 12px;
     font-size: 1.125rem;
+}
+/*Custom-checkbox*/
+.custom-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    user-select: none;
+}
+.custom-checkbox+label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    background-color: white;
+}
+.custom-checkbox:checked+label::before {
+    background-color: #ffffff;
+    background-image: url("../images/icon.png");
 }
